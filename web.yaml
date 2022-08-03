@@ -8,5 +8,5 @@ inputs:
 - name: storj
 
 run:
-   path: ci/web.sh
+   path: ../ci/web.sh
    dir: storj

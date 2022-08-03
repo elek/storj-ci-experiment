@@ -9,5 +9,5 @@ inputs:
 - name: ci
 
 run:
-   path: ci/build.sh
+   path: ../ci/build.sh
    dir: storj

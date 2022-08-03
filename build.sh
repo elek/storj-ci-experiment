@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 set -ex
-cd "$(dirname "${BASH_SOURCE[0]}")"/..
 
 go test -v -p 16 -tags noembed -bench XYZXYZXYZXYZ -run XYZXYZXYZXYZ ./...
 go test -v -p 16 -tags noembed -bench XYZXYZXYZXYZ -run XYZXYZXYZXYZ -race ./...

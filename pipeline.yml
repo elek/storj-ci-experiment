@@ -8,9 +8,9 @@ jobs:
   - in_parallel:
       fail_fast: true
       steps:
-      - file: storj/ci/web.yaml
+      - file: ci/web.yaml
         task: web
-      - file: storj/ci/build.yaml
+      - file: ci/build.yaml
         task: build
 
 resources:

@@ -36,9 +36,11 @@ cockroach sql --insecure --host=localhost:26259 -e 'create database testcockroac
 cockroach sql --insecure --host=localhost:26260 -e 'create database testcockroach;'
 
 psql -U postgres -c 'create database teststorj;'
+
 use-ports -from 1024 -to 10000 &
+
 : ${TEST_TARGET:=./...}
 go test -tags noembed -parallel 4 -p 6 -vet=off $COVERFLAGS -timeout 32m -json -race ${TEST_TARGET} 2>&1 | tee .build/tests.json | xunit -out .build/tests.xml
 
 pkill -f cockroach
- 
+service postgresl stop 

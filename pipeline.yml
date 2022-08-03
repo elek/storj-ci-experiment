@@ -5,13 +5,16 @@ jobs:
     trigger: true
   - get: ci
     trigger: true
-  - in_parallel:
-      fail_fast: true
-      steps:
-      - file: ci/web.yaml
-        task: web
-      - file: ci/build.yaml
-        task: build
+  - task:  pre-build
+  - task: web
+    file: ci/web.yaml        
+  - task: build
+    file: ci/build.yaml
+  - task: lint
+    file: ci/lint.yaml
+  - task: unit
+    file: ci/unit.yaml        
+        
 
 resources:
 - name: storj

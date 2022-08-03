@@ -6,7 +6,8 @@ image_resource:
 
 inputs:
 - name: storj
+- name: ci
 
 run:
-   path: ./ci/lint.sh
+   path: ../ci/lint.sh
    dir: storj

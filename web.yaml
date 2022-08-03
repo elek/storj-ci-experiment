@@ -6,6 +6,7 @@ image_resource:
 
 inputs:
 - name: storj
+- name: ci
 
 run:
    path: ../ci/web.sh

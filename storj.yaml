@@ -1,0 +1,19 @@
+resources:
+- name: storj
+  type: git
+  icon: github
+  source:
+    uri: https://github.com/elek/storj.git
+
+jobs:
+- name: build
+  plan:
+  - get: storj
+    trigger: true
+  - in_parallel:
+      fail_fast: true
+      steps:
+      - task: web
+        file: storj/ci/web.yaml
+      - task: build
+        file: storj/ci/build.yaml

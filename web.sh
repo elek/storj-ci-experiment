@@ -1,8 +1,6 @@
 #!/usr/bin/env bash
 
 set -ex
-cd "$(dirname "${BASH_SOURCE[0]}")"/..
-
 cd web/satellite
 
 npm install --prefer-offline --no-audit --loglevel verbose

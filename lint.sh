@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 set -ex
-cd "$(dirname "${BASH_SOURCE[0]}")"/..
 
 if [ ! -f ".golangci.yml" ]; then
    wget https://raw.githubusercontent.com/storj/ci/main/.golangci.yml

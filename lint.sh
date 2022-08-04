@@ -30,10 +30,11 @@ fi
 golangci-lint -j=2 run
 cd -
 
-cd satellite/admin/ui
-npm run check
-npm run lint
-cd -
+#cd satellite/admin/ui
+#npm install
+#npm run check
+#npm run lint
+#cd -
 
 ./scripts/check-package-lock.sh
 

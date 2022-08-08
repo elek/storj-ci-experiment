@@ -1,0 +1,27 @@
+platform: linux
+image_resource:
+   type: registry-image
+   source:
+      repository: storjlabs/ci
+
+inputs:
+- name: storj
+- name: ci
+
+outputs:
+- name: binaries
+
+params:
+   OUTPUT_DIR: ../binaries
+
+caches:
+   - path: gocache
+
+run:
+   path: bash
+   dir: storj
+   args:
+      - -c
+      - |
+         GO_CACHE=`pwd`../gocache
+         ../ci/binaries.sh

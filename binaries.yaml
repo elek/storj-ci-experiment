@@ -23,5 +23,5 @@ run:
    args:
       - -c
       - |
-         GO_CACHE=`pwd`../gocache
+         GO_CACHE=`pwd`/../gocache
          ../ci/binaries.sh
